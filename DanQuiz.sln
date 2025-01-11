@@ -1,0 +1,356 @@
+namespace QuizProject
+{
+    using System;
+    using System.Collections.Generic;
+
+    class DanQuiz
+    {
+        // ------------------------------------------------------------------------------------
+        // Existing C# Questions (64)
+        // ------------------------------------------------------------------------------------
+        static readonly string[] csharpQuestions = {
+            "1. Which shape is used for the start and end in a flowchart?\nA) Ellipse\nB) Rectangle\nC) Square",
+            "2. What is the decimal equivalent of the binary number 1011?\nA) 11\nB) 13\nC) 15",
+            "3. True/False: C# is a case-sensitive programming language.",
+            "4. What operator is used in C# to compare two values?\nA) ==\nB) !=\nC) >=",
+            "5. Which method is used to find the length of a string in C#?\nA) size()\nB) Length\nC) count()",
+            "6. How is a fixed-length array defined in C#?\nA) using List\nB) using Array\nC) using new Array",
+            "7. When was Android launched?\nA) in 1980\nB) in 1970\nC) in 2008",
+            "8. What does OOP stand for?\nA) Object-Oriented Programming\nB) Open Object Protocol\nC) Optional Object Processing",
+            "9. What is the correct keyword to inherit a class in C#?\nA) inherit\nB) extends\nC) :",
+            "10. True/False: A constructor can have a return type in C#.",
+            "11. What is the maximum value of a byte in C#?\nA) 127\nB) 255\nC) 1024",
+            "12. Which keyword is used to create an abstract class in C#?\nA) virtual\nB) abstract\nC) override",
+            "13. What is the default value of a boolean in C#?\nA) true\nB) false\nC) null",
+            "14. Which operator is used to access a member of a class?\nA) . (dot)\nB) :: (scope resolution)\nC) -> (arrow)",
+            "15. What does IDE stand for?\nA) Integrated Development Environment\nB) Interactive Debugging Engine\nC) Internal Deployment Editor",
+            "16. What is the file extension for a C# source file?\nA) .java\nB) .cs\nC) .py",
+            "17. Which method is used to write to the console in C#?\nA) Console.WriteLine()\nB) Console.Display()\nC) Console.Output()",
+            "18. What is the access modifier that allows a class to be accessed from anywhere?\nA) protected\nB) private\nC) public",
+            "19. Which type is immutable in C#?\nA) String\nB) Array\nC) List",
+            "20. What is the correct way to declare a constant in C#?\nA) const\nB) final\nC) static",
+            "21. What is the keyword to handle exceptions in C#?\nA) try-catch\nB) exception-handler\nC) onError",
+            "22. Which loop is guaranteed to execute at least once?\nA) for\nB) while\nC) do-while",
+            "23. True/False: C# supports multiple inheritance for classes.",
+            "24. What is the size of an int in C#?\nA) 2 bytes\nB) 4 bytes\nC) 8 bytes",
+            "25. Which keyword is used to define a namespace in C#?\nA) package\nB) namespace\nC) module",
+            "26. What is the return type of a constructor?\nA) void\nB) class type\nC) No return type",
+            "27. Which access modifier restricts access to within the same class?\nA) protected\nB) internal\nC) private",
+            "28. What does CLR stand for in .NET?\nA) Common Language Runtime\nB) Central Logic Repository\nC) Code Level Resolver",
+            "29. What is the default value of an int in C#?\nA) 0\nB) null\nC) undefined",
+            "30. What is the use of the `using` keyword in C#?\nA) Include namespaces\nB) Handle exceptions\nC) Declare variables",
+            "31. What does IL stand for in .NET?\nA) Intermediate Language\nB) Internal Logic\nC) Immediate Layer",
+            "32. True/False: C# allows operator overloading.",
+            "33. Which of the following is a value type in C#?\nA) String\nB) Enum\nC) Array",
+            "34. What is the correct way to handle resources in C#?\nA) Dispose()\nB) Close()\nC) End()",
+            "35. Which of the following is a reference type?\nA) int\nB) float\nC) object",
+            "36. What is the purpose of the `static` keyword?\nA) Make members shared across all instances\nB) Declare a constant\nC) Create an instance",
+            "37. What is the base class of all exceptions in C#?\nA) Error\nB) Exception\nC) Throwable",
+            "38. What is the entry point of a C# program?\nA) start()\nB) Main()\nC) entry()",
+            "39. Which keyword is used to implement interfaces in C#?\nA) inherit\nB) override\nC) :",
+            "40. What is the keyword for defining read-only fields?\nA) readonly\nB) constant\nC) static",
+            "41. What is boxing in C#?\nA) Converting a value type to a reference type\nB) Converting a reference type to a value type\nC) Wrapping an object in a string",
+            "42. What does LINQ stand for?\nA) Language Integrated Query\nB) Logical Index Query\nC) List Input Query",
+            "43. What is the purpose of the `sealed` keyword?\nA) Prevent inheritance\nB) Define constants\nC) Handle exceptions",
+            "44. True/False: An interface can have private methods in C#.",
+            "45. What is the output of `Console.WriteLine(5/2);`?\nA) 2.5\nB) 2\nC) Error",
+            "46. What is the difference between `int` and `Int32`?\nA) No difference\nB) `int` is an alias for `Int32`\nC) `Int32` is a structure",
+            "47. Which method is used to read input from the console?\nA) Console.Read()\nB) Console.ReadLine()\nC) Console.GetInput()",
+            "48. Which keyword is used to prevent a method from being overridden?\nA) sealed\nB) final\nC) static",
+            "49. What does `params` allow in C#?\nA) Multiple arguments of the same type\nB) Passing a variable number of arguments\nC) No arguments",
+            "50. What is polymorphism in OOP?\nA) One name with multiple implementations\nB) Inheriting from multiple classes\nC) Reusing code",
+            "51. Which method converts a string to an integer in C#?\nA) Int32.Parse()\nB) Convert.ToInt()\nC) int.ParseString()",
+            "52. Which statement is used to terminate a loop in C#?\nA) exit\nB) continue\nC) break",
+            "53. What is a delegate in C#?\nA) A type-safe function pointer\nB) A way to pass parameters\nC) A thread handler",
+            "54. What does the `is` keyword do in C#?\nA) Checks the type of an object\nB) Declares an object\nC) Creates a thread",
+            "55. Which of these is a valid nullable type in C#?\nA) int\nB) Nullable<int>\nC) Int32?",
+            "56. What is the difference between `ref` and `out` parameters?\nA) `ref` requires initialization; `out` does not\nB) No difference\nC) `out` is for output only",
+            "57. What is the purpose of `async` in C#?\nA) Parallel processing\nB) Asynchronous programming\nC) Exception handling",
+            "58. What is the default access modifier for a class?\nA) private\nB) public\nC) internal",
+            "59. What is an indexer in C#?\nA) A way to index arrays\nB) A special property to access collections\nC) A thread manager",
+            "60. What is encapsulation in OOP?\nA) Hiding implementation details\nB) Defining multiple classes\nC) Reusing code",
+            "61. What is the purpose of `virtual` in C#?\nA) Allow method overriding\nB) Define abstract methods\nC) Seal methods",
+            "62. True/False: `List<T>` is a generic collection in C#.",
+            "63. What is the maximum value of an int in C#?\nA) 2,147,483,647\nB) 4,294,967,295\nC) 9,223,372,036,854,775,807",
+            "64. Which attribute is used to mark methods for testing in C#?\nA) TestMethod\nB) Fact\nC) Test"
+        };
+
+        static readonly string[] csharpAnswers = {
+            "A", "A", "True", "A", "B", "B", "C", "A", "C", "False",
+            "B", "B", "B", "A", "A", "B", "A", "C", "A", "A",
+            "A", "C", "False", "B", "B", "C", "C", "A", "A", "A",
+            "A", "True", "B", "A", "C", "A", "B", "B", "C", "A",
+            "A", "A", "A", "False", "B", "A", "B", "A", "A", "B",
+            "C", "A", "A", "A", "C", "A", "B", "B", "B", "A",
+            "A", "A", "True", "A", "B"
+        };
+
+        // ------------------------------------------------------------------------------------
+        // New Category 1: ASP.NET (20 questions)
+        // ------------------------------------------------------------------------------------
+        static readonly string[] aspnetQuestions = {
+            "1. Which ASP.NET technology introduced Razor Pages?\nA) ASP.NET Core 2.0\nB) ASP.NET Core 3.1\nC) ASP.NET 4.5",
+            "2. What is the file extension for Razor Views?\nA) .razor\nB) .cshtml\nC) .vbhtml",
+            "3. True/False: ASP.NET Web Forms uses an event-driven model.",
+            "4. Which class is typically used for configuration in ASP.NET Core?\nA) Startup\nB) Configuration\nC) Program",
+            "5. In ASP.NET MVC, the 'M' stands for:\nA) Module\nB) Model\nC) Manager",
+            "6. Which keyword is used to inject a service into a Razor page?\nA) @inject\nB) @service\nC) @dependency",
+            "7. True/False: ASP.NET Core is cross-platform.",
+            "8. What does MVC stand for?\nA) Model-View-Controller\nB) Manage-View-Capture\nC) Module-Verify-Compile",
+            "9. Which method is used to register middleware in the HTTP request pipeline?\nA) ConfigureServices\nB) UseMiddleware\nC) AddControllers",
+            "10. True/False: You can host an ASP.NET Core app on Linux.",
+            "11. Which package manager is commonly used in ASP.NET projects?\nA) Maven\nB) NuGet\nC) npm",
+            "12. In ASP.NET Core, which file typically contains app configuration?\nA) appsettings.json\nB) settings.config\nC) config.xml",
+            "13. True/False: Blazor is a framework for building interactive web UIs using C# instead of JavaScript.",
+            "14. Which tool is used to manage ASP.NET Core migration scripts?\nA) Visual Studio Wizard\nB) EF Core CLI\nC) DacPac",
+            "15. Which method in Startup.cs configures the HTTP request pipeline?\nA) Configure()\nB) Initialize()\nC) BuildPipeline()",
+            "16. True/False: Identity is a login solution provided by ASP.NET Core for authentication and authorization.",
+            "17. What is the default controller naming convention in ASP.NET MVC?\nA) *View*\nB) *Ctrl*\nC) *Controller",
+            "18. Which property in MVC represents the data passed to the View?\nA) ViewData\nB) ViewBag\nC) Both A & B",
+            "19. True/False: Razor Pages can exist alongside MVC controllers in the same ASP.NET Core application.",
+            "20. Which method is used to set up services like EF Core or Identity?\nA) Configure()\nB) ConfigureServices()\nC) Main()"
+        };
+
+        static readonly string[] aspnetAnswers = {
+            "A", "B", "True", "A", "B", "A", "True", "A", "B", "True",
+            "B", "A", "True", "B", "A", "True", "C", "C", "True", "B"
+        };
+
+        // ------------------------------------------------------------------------------------
+        // New Category 2: Databases (20 questions)
+        // ------------------------------------------------------------------------------------
+        static readonly string[] dbQuestions = {
+            "1. Which SQL statement is used to remove rows from a table?\nA) DELETE\nB) DROP\nC) TRUNCATE",
+            "2. True/False: In SQL, the WHERE clause filters rows based on a condition.",
+            "3. What does RDBMS stand for?\nA) Relational Database Management System\nB) Rational Data Modeling Structure\nC) Remote Database Main Server",
+            "4. Which keyword is used to remove duplicates in a SELECT statement?\nA) DISTINCT\nB) UNIQUE\nC) NO DUP",
+            "5. True/False: A PRIMARY KEY can have duplicate values in a table.",
+            "6. Which command is used to add a new column to an existing table?\nA) ALTER TABLE\nB) UPDATE TABLE\nC) RENAME TABLE",
+            "7. What does ACID stand for in database transactions?\nA) Atomicity, Consistency, Isolation, Durability\nB) Algebraic, Consistent, Integral, Data\nC) Access, Control, Integrity, Delete",
+            "8. Which SQL clause is used to group rows that have the same values?\nA) GROUP BY\nB) ORDER BY\nC) HAVING",
+            "9. True/False: An INNER JOIN returns only rows with matching values in both tables.",
+            "10. Which statement is used to modify existing records in a table?\nA) MODIFY\nB) UPDATE\nC) SET",
+            "11. What is the default port for SQL Server?\nA) 1433\nB) 3306\nC) 5432",
+            "12. True/False: A foreign key can reference a non-primary key column in another table, as long as it is indexed or uniquely identified.",
+            "13. Which SQL function is used to count rows in a table?\nA) SUM()\nB) COUNT()\nC) AVERAGE()",
+            "14. True/False: NoSQL databases do not use tables, columns, or rows.",
+            "15. What is the main purpose of an index in a database?\nA) To compress data\nB) To speed up queries\nC) To encrypt records",
+            "16. In SQL, which command is used to create a new table?\nA) CREATE TABLE\nB) ADD TABLE\nC) NEW TABLE",
+            "17. True/False: The HAVING clause is used with aggregate functions to filter groups in a SELECT statement.",
+            "18. Which join returns all rows from both tables, matching them where possible?\nA) LEFT JOIN\nB) RIGHT JOIN\nC) FULL OUTER JOIN",
+            "19. Which constraint ensures that a column cannot have NULL values?\nA) UNIQUE\nB) NOT NULL\nC) CHECK",
+            "20. True/False: TRUNCATE TABLE removes all rows from a table but keeps its structure."
+        };
+
+        static readonly string[] dbAnswers = {
+            "A", "True", "A", "A", "False", "A", "A", "A", "True", "B",
+            "A", "True", "B", "True", "B", "A", "True", "C", "B", "True"
+        };
+
+        // ------------------------------------------------------------------------------------
+        // New Category 3: Software Testing (20 questions)
+        // ------------------------------------------------------------------------------------
+        static readonly string[] testingQuestions = {
+            "1. What is the primary purpose of unit testing?\nA) To test individual components in isolation\nB) To test the entire system\nC) To test integration between modules",
+            "2. True/False: Regression testing ensures new changes don't break existing functionality.",
+            "3. Which type of testing focuses on the application's user interface?\nA) System Testing\nB) Integration Testing\nC) GUI Testing",
+            "4. What does TDD stand for?\nA) Technical Debugging Design\nB) Test-Driven Development\nC) Total Data Documentation",
+            "5. Which tool is commonly used for unit testing in C#?\nA) JUnit\nB) NUnit\nC) Jest",
+            "6. True/False: White-box testing involves knowledge of the internal code structure.",
+            "7. Which testing level involves verifying the entire product meets requirements?\nA) System testing\nB) Unit testing\nC) Integration testing",
+            "8. What is smoke testing?\nA) Checking the stability of a new build\nB) Testing performance under heavy load\nC) Testing only the front-end",
+            "9. True/False: In manual testing, all tests are run by automation tools.",
+            "10. Which type of testing checks for vulnerabilities and threats?\nA) Security Testing\nB) Alpha Testing\nC) Usability Testing",
+            "11. What is the main benefit of continuous integration (CI) in testing?\nA) Automates building and testing frequently\nB) Eliminates code reviews\nC) Prevents all bugs",
+            "12. True/False: A bug report typically includes steps to reproduce the issue, expected vs. actual results, and environment details.",
+            "13. Which testing technique focuses on possible transitions between states?\nA) Boundary Value Analysis\nB) State Transition Testing\nC) Equivalence Partitioning",
+            "14. What does UAT stand for?\nA) Universal Automation Testing\nB) User Acceptance Testing\nC) Unit Automated Testing",
+            "15. True/False: Integration testing is done before unit testing.",
+            "16. Which test design technique uses input values at the edge of equivalence partitions?\nA) Boundary Value Analysis\nB) Fuzz Testing\nC) Performance Testing",
+            "17. In agile methodologies, testing is usually done:\nA) Only at the end of the project\nB) Continuously throughout development\nC) By a separate department only",
+            "18. True/False: Performance testing measures the responsiveness, throughput, and stability of a system under a certain workload.",
+            "19. What is alpha testing?\nA) Testing done by the end-users\nB) Testing done by potential customers in a live environment\nC) Testing done by internal staff in a controlled environment",
+            "20. True/False: Beta testing is performed by the development team internally."
+        };
+
+        static readonly string[] testingAnswers = {
+            "A", "True", "C", "B", "B", "True", "A", "A", "False", "A",
+            "A", "True", "B", "B", "False", "A", "B", "True", "C", "False"
+        };
+
+        // ------------------------------------------------------------------------------------
+        // New Category 4: Computer Networks (20 questions)
+        // ------------------------------------------------------------------------------------
+        static readonly string[] networkingQuestions = {
+            "1. What does LAN stand for?\nA) Local Area Network\nB) Large Application Network\nC) Logical Access Node",
+            "2. True/False: TCP is connection-oriented, whereas UDP is connectionless.",
+            "3. Which protocol is used for secure HTTP connections?\nA) FTP\nB) SMTP\nC) HTTPS",
+            "4. What is the primary function of a router?\nA) Connect devices in a single LAN\nB) Forward data packets between different networks\nC) Translate domain names to IP addresses",
+            "5. True/False: IPv6 addresses are 128 bits long.",
+            "6. Which device connects multiple devices in a LAN but does NOT segment the network into separate collision domains?\nA) Switch\nB) Hub\nC) Router",
+            "7. What does DNS stand for?\nA) Domain Name Service\nB) Data Network Server\nC) Direct Network Setup",
+            "8. Which layer of the OSI model deals with end-to-end data transport?\nA) Session layer\nB) Transport layer\nC) Network layer",
+            "9. True/False: A subnet mask determines which portion of an IP address refers to the network.",
+            "10. Which protocol is used to send email?\nA) SMTP\nB) POP3\nC) IMAP",
+            "11. What is the purpose of DHCP?\nA) To dynamically assign IP addresses\nB) To encrypt connections\nC) To route data",
+            "12. True/False: A VPN allows for a secure connection over a public network, such as the internet.",
+            "13. Which protocol translates domain names to IP addresses?\nA) ARP\nB) DNS\nC) DHCP",
+            "14. Which layer of the OSI model handles error detection and flow control over a single link?\nA) Data Link\nB) Transport\nC) Application",
+            "15. True/False: The MAC address is unique for every network interface card.",
+            "16. Which port is typically used by HTTP?\nA) 443\nB) 80\nC) 21",
+            "17. Which topology connects all nodes in a closed-loop ring?\nA) Bus\nB) Ring\nC) Star",
+            "18. True/False: SSL/TLS is a protocol to encrypt data in transit.",
+            "19. Which device is used to regulate traffic between two different networks, often filtering packets?\nA) Switch\nB) Firewall\nC) Bridge",
+            "20. What does WAN stand for?\nA) Wide Area Network\nB) Wireless Access Node\nC) Web Application Network"
+        };
+
+        static readonly string[] networkingAnswers = {
+            "A", "True", "C", "B", "True", "B", "A", "B", "True", "A",
+            "A", "True", "B", "A", "True", "B", "B", "True", "B", "A"
+        };
+
+        // ------------------------------------------------------------------------------------
+        // New Category 5: Additional General Knowledge (20 questions)
+        // ------------------------------------------------------------------------------------
+        static readonly string[] gkQuestions = {
+            "1. Which planet is known as the Red Planet?\nA) Venus\nB) Mars\nC) Jupiter",
+            "2. True/False: The Great Wall of China is visible from space with the naked eye.",
+            "3. Which ocean is the largest on Earth?\nA) Atlantic Ocean\nB) Indian Ocean\nC) Pacific Ocean",
+            "4. Who wrote the play 'Romeo and Juliet'?\nA) William Shakespeare\nB) Charles Dickens\nC) Mark Twain",
+            "5. True/False: The speed of light is approximately 300,000 km/s.",
+            "6. What is the capital of Japan?\nA) Tokyo\nB) Kyoto\nC) Osaka",
+            "7. Which chemical element has the symbol 'O'?\nA) Oxygen\nB) Gold\nC) Osmium",
+            "8. True/False: Mount Everest is the highest mountain above sea level.",
+            "9. Which gas do plants primarily absorb for photosynthesis?\nA) Oxygen\nB) Carbon Dioxide\nC) Nitrogen",
+            "10. Who proposed the theory of relativity?\nA) Isaac Newton\nB) Albert Einstein\nC) Galileo Galilei",
+            "11. True/False: Penguins are only found in Antarctica.",
+            "12. Which country is known as the 'Land of the Rising Sun'?\nA) China\nB) Japan\nC) Thailand",
+            "13. What is the largest mammal on Earth?\nA) Elephant\nB) Blue Whale\nC) Giraffe",
+            "14. True/False: Water boils at 100°C at sea level.",
+            "15. What language has the most native speakers?\nA) English\nB) Spanish\nC) Mandarin Chinese",
+            "16. Who was the first person to set foot on the Moon?\nA) Yuri Gagarin\nB) Buzz Aldrin\nC) Neil Armstrong",
+            "17. True/False: The Sahara is the largest hot desert in the world.",
+            "18. Which ancient civilization built the pyramids?\nA) Aztecs\nB) Egyptians\nC) Romans",
+            "19. What is the hardest natural substance on Earth?\nA) Diamond\nB) Graphite\nC) Steel",
+            "20. True/False: The Earth orbits the Sun once every 365 days."
+        };
+
+        static readonly string[] gkAnswers = {
+            "B", "False", "C", "A", "True", "A", "A", "True", "B", "B",
+            "False", "B", "B", "True", "C", "C", "True", "B", "A", "True"
+        };
+
+       
+        
+        static readonly Dictionary<string, (string[] questions, string[] answers)> quizCategories =
+            new Dictionary<string, (string[], string[])>
+            {
+                { "1", (csharpQuestions, csharpAnswers) },
+                { "2", (aspnetQuestions, aspnetAnswers) },
+                { "3", (dbQuestions, dbAnswers) },
+                { "4", (testingQuestions, testingAnswers) },
+                { "5", (networkingQuestions, networkingAnswers) },
+                { "6", (gkQuestions, gkAnswers) }
+            };
+
+        static void Main()
+        {
+            bool playAgain = true;
+
+            while (playAgain)
+            {
+                Console.Clear();
+                Console.WriteLine("Welcome to the Dan Quiz! 🧠");
+                Console.WriteLine("Select a Category to Start Quiz:");
+                Console.WriteLine("1. C# Quiz");
+                Console.WriteLine("2. ASP.NET Quiz");
+                Console.WriteLine("3. Databases Quiz");
+                Console.WriteLine("4. Software Testing Quiz");
+                Console.WriteLine("5. Computer Networks Quiz");
+                Console.WriteLine("6. General Knowledge Quiz");
+                Console.WriteLine("7. Exit ❌");
+                Console.Write("Enter your choice: ");
+                string? option = Console.ReadLine();
+
+                if (option == "7")
+                {
+                    Console.WriteLine("Thank you for playing! 😊 Goodbye!");
+                    playAgain = false;
+                }
+                else if (quizCategories.ContainsKey(option))
+                {
+                    // Start the chosen quiz
+                    (string[] questions, string[] answers) selectedQuiz = quizCategories[option];
+                    StartQuiz(selectedQuiz.questions, selectedQuiz.answers);
+                }
+                else
+                {
+                    Console.WriteLine("Invalid choice. ❌ Try again.");
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey();
+                }
+            }
+        }
+
+        static void StartQuiz(string[] questions, string[] answers)
+        {
+            int score = 0;
+
+            for (int i = 0; i < questions.Length; i++)
+            {
+                AskQuestion(questions[i], answers[i], ref score);
+            }
+
+            DisplayScore(score, questions.Length);
+
+            Console.WriteLine("\nPress any key to return to the main menu... 🔙");
+            Console.ReadKey();
+        }
+
+        static void AskQuestion(string question, string correctAnswer, ref int score)
+        {
+            Console.Clear();
+            Console.WriteLine(question);
+            Console.Write("Your answer: 📝 ");
+            string userAnswer = Console.ReadLine() ?? ""; // Default to an empty string if null
+
+            if (CheckAnswer(userAnswer, correctAnswer))
+            {
+                Console.WriteLine("Correct! 🎉 +10 points.");
+                score += 10;
+            }
+            else
+            {
+                Console.WriteLine($"Incorrect. ❌ The correct answer was: {correctAnswer}");
+            }
+
+            Console.WriteLine("Press any key for the next question... 🔜");
+            Console.ReadKey();
+        }
+
+        static bool CheckAnswer(string userAnswer, string correctAnswer)
+        {
+            return string.Equals(userAnswer.Trim(), correctAnswer, StringComparison.OrdinalIgnoreCase);
+        }
+
+        static void DisplayScore(int score, int numberOfQuestions)
+        {
+            Console.Clear();
+            int maxScore = numberOfQuestions * 10;
+            Console.WriteLine($"Your total score is: {score}/{maxScore} 🏅");
+
+            // Provide feedback based on score ranges
+            double percentage = (double)score / maxScore * 100.0;
+            if (percentage >= 90)
+                Console.WriteLine("Feedback: Excellent! 😎");
+            else if (percentage >= 75)
+                Console.WriteLine("Feedback: Good. 🤗");
+            else if (percentage >= 60)
+                Console.WriteLine("Feedback: Satisfactory. 😒");
+            else if (percentage >= 40)
+                Console.WriteLine("Feedback: Poor. 😕");
+            else
+                Console.WriteLine("Feedback: Failed... ❌ Try again!");
+        }
+    }
+}
